@@ -1,0 +1,13 @@
+; ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+; モジュール定義ファイル
+; 
+; UnityEditorWindowCorner.cpp
+; ────────────────────────────────────────
+; バージョン: 1.0.0
+; 2025 Wataame(HWataame)
+; ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LIBRARY
+EXPORTS
+    ; UnityEditorの初期化時の処理
+    OnUnityEditorInitialize @1
