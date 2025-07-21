@@ -97,3 +97,12 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# DLLのソリューションの中間生成物など
+/ExternalLibraries/UnityEditorWindowCorner/.vs*
+/ExternalLibraries/UnityEditorWindowCorner/UnityEditorWindowCorner/x64*
+/ExternalLibraries/UnityEditorWindowCorner/UnityEditorWindowCorner/Sources/AssemblyInfo/resource.aps
+/ExternalLibraries/UnityEditorWindowCorner/x64*
+
+# DLLのソリューションファイル
+!/ExternalLibraries/UnityEditorWindowCorner/UnityEditorWindowCorner.sln

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Common">
+      <UniqueIdentifier>{693c01b6-c3ea-49fe-b2bc-115bfa640e63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Common">
+      <UniqueIdentifier>{3183a494-2110-4717-b6f9-9bc0f7a8949c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\IAT">
+      <UniqueIdentifier>{a99a1463-f6d8-47dd-be8b-06d700836965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\IAT">
+      <UniqueIdentifier>{caf481cb-4e30-4e2a-b40f-9bada6577fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Corner">
+      <UniqueIdentifier>{57eec151-3d8c-4d9b-9b1b-b33184b00b6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Corner">
+      <UniqueIdentifier>{86761adf-f52e-4ce6-b116-2d58028dc64a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\AssemblyInfo">
+      <UniqueIdentifier>{b8afdf58-ec6d-4109-b87d-8fd7175150a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AssemblyInfo">
+      <UniqueIdentifier>{4084eecd-d861-47ea-b056-c2d25f5def8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\AssemblyInfo">
+      <UniqueIdentifier>{bd25df12-262a-4f75-9534-ab97177d07d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\Common\Windows.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Common\TextUtil.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Common\VirtualProtectScope.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\IAT\Injector.h">
+      <Filter>ヘッダー ファイル\IAT</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Corner\WindowCorner.h">
+      <Filter>ヘッダー ファイル\Corner</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Corner\WindowCornerType.h">
+      <Filter>ヘッダー ファイル\Corner</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\AssemblyInfo\resource.h">
+      <Filter>ヘッダー ファイル\AssemblyInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\ShowWindowReplacer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\IAT\Injector.cpp">
+      <Filter>ソース ファイル\IAT</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Common\VirtualProtectScope.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Corner\WindowCorner.cpp">
+      <Filter>ソース ファイル\Corner</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\ShowWindowReplacer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sources\AssemblyInfo\UnityEditorWindowCorner.def">
+      <Filter>ソース ファイル\AssemblyInfo</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Sources\AssemblyInfo\resource.rc">
+      <Filter>リソース ファイル\AssemblyInfo</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
