@@ -30,8 +30,9 @@ namespace HW::UnityEditorWindowCorner
     /// <summary>
     /// ShowWindowを独自の実装に置き換える
     /// </summary>
+        /// <param name="targetModuleName">関数をインポートしているモジュール名</param>
     /// <returns>処理結果</returns>
-    const bool ShowWindowReplacer::ReplaceShowWindow() noexcept
+    const bool ShowWindowReplacer::ReplaceShowWindow(const char* targetModuleName) noexcept
     {
         // ShowWindowを置き換える
         void* oldShowWindow;

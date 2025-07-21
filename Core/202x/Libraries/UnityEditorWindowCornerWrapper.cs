@@ -20,9 +20,11 @@ namespace HW.UnityEditorWindowCorner.Libraries
         /// <summary>
         /// UnityEditorの初期化時の処理
         /// </summary>
+        /// <param name="targetModuleName">関数をインポートしているモジュール名</param>
         /// <returns>処理結果</returns>
         [DllImport("UnityEditorWindowCorner_x64.dll", EntryPoint = "OnUnityEditorInitialize", CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.U1)]
-        internal static extern bool OnUnityEditorInitialize();
+        internal static extern bool OnUnityEditorInitialize(
+            [MarshalAs(UnmanagedType.LPStr)] string targetModuleName);
     }
 }

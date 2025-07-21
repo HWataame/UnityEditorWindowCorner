@@ -17,10 +17,11 @@ namespace HW::UnityEditorWindowCorner
     /// <summary>
     /// UnityEditorの初期化時の処理
     /// </summary>
+    /// <param name="targetModuleName">関数をインポートしているモジュール名</param>
     /// <returns>処理結果</returns>
-    bool OnUnityEditorInitialize() noexcept
+    bool OnUnityEditorInitialize(const char* targetModuleName) noexcept
     {
-        if (!ShowWindowReplacer::ReplaceShowWindow())
+        if (!ShowWindowReplacer::ReplaceShowWindow(targetModuleName))
         {
             // ShowWindowを独自の実装に置き換えられなかった場合は失敗
             return false;

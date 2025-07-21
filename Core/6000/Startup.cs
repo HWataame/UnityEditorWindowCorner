@@ -10,6 +10,7 @@ Startup.cs
 */
 using HW.UnityEditorWindowCorner.Libraries;
 using System;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 
@@ -36,12 +37,57 @@ namespace HW.UnityEditorWindowCorner
                     $"現在の環境: {IntPtr.Size * 8}ビットアプリケーションから実行");
             }
 
-            // 初期化時の処理(ウィンドウの角の処理)を実行する
-            if (!UnityEditorWindowCornerWrapper.OnUnityEditorInitialize())
+            // UnityEditorのメジャーバージョンを取得する
+            if (GetUnityEditorMajorVersion(out var versionMajor))
             {
-                // ウィンドウの角を処理できなかった場合
-                Debug.LogError("[UnityEditorWindowCorner] ウィンドウの角を変更できませんでした");
+                bool isActive = false;
+                string targetModuleName = null;
+                switch (versionMajor)
+                {
+                    case 2021:
+                    case 2022:
+                        // 2021.x / 2022.xの場合(ShowWindowの参照はUnity.exe自身がしている)
+                        targetModuleName = null;
+                        isActive = true;
+                        break;
+                    case 6000:
+                        // 6000.xの場合(ShowWindowの参照はUnity.dllに分離されている)
+                        targetModuleName = "Unity.dll";
+                        isActive = true;
+                        break;
+                    default:
+                        Debug.LogError($"[UnityEditorWindowCorner] Unityのバージョン{versionMajor}には対応していません");
+                        break;
+                }
+
+                // 初期化時の処理(ウィンドウの角の処理)を実行する
+                if (isActive && !UnityEditorWindowCornerWrapper.OnUnityEditorInitialize(targetModuleName))
+                {
+                    // ウィンドウの角を処理できなかった場合
+                    Debug.LogError("[UnityEditorWindowCorner] ウィンドウの角を変更できませんでした");
+                }
             }
+        }
+
+        /// <summary>
+        /// UnityEditorのメジャーバージョンを取得する
+        /// </summary>
+        /// <param name="majorVersion">UnityEditorのメジャーバージョン</param>
+        /// <returns>処理結果</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static bool GetUnityEditorMajorVersion(out int majorVersion)
+        {
+            // バージョンの文字列からメジャーバージョンの取得を試行する
+            var appVersionSplit = Application.unityVersion.Split('.');
+            if (appVersionSplit == null || appVersionSplit.Length == 0 ||
+                !int.TryParse(appVersionSplit[0], out majorVersion))
+            {
+                // メジャーバージョンを取得できなかった場合は失敗
+                majorVersion = 0;
+                return false;
+            }
+
+            return true;
         }
     }
 }
