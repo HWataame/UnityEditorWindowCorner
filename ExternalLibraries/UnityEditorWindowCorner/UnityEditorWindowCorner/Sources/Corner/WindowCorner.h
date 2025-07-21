@@ -37,6 +37,12 @@ namespace HW::UnityEditorWindowCorner::Corner
         static const bool Set(const HWND windowHandle,
             const WindowCornerType newType, WindowCornerType* oldType) noexcept;
 
+        /// <summary>
+        /// 自身のプロセスのウィンドウの角を処理する
+        /// </summary>
+        /// <returns>処理結果</returns>
+        static const bool ProcessSelfWindowCorners() noexcept;
+
     private:
         /// <summary>
         /// デフォルトコンストラクタ(外部生成防止用)
@@ -49,5 +55,14 @@ namespace HW::UnityEditorWindowCorner::Corner
         /// <param name="windowHandle">ウィンドウのハンドル</param>
         /// <returns>トップレベルのウィンドウのハンドル</returns>
         static const HWND GetTopLevelWindowHandle(const HWND windowHandle) noexcept;
+
+        /// <summary>
+        /// ProcessSelfWindowCornersの列挙処理のコールバック用関数
+        /// </summary>
+        /// <param name="windowHandle">ウィンドウハンドル</param>
+        /// <param name="parameter">パラメーター</param>
+        /// <returns>列挙を続行するか</returns>
+        static BOOL CALLBACK ProcessSelfWindowCornersCallback(
+            HWND windowHandle, LPARAM parameter) noexcept;
     };
 }

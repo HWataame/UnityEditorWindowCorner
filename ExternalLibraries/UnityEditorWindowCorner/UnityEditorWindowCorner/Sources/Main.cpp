@@ -20,6 +20,8 @@ namespace HW::UnityEditorWindowCorner
     /// <returns>処理結果</returns>
     bool OnUnityEditorInitialize() noexcept
     {
+        // 自身のプロセスの既に存在するウィンドウの角を処理する
+        WindowCorner::ProcessSelfWindowCorners();
 
         return true;
     }

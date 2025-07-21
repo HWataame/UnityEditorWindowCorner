@@ -96,6 +96,17 @@ namespace HW::UnityEditorWindowCorner::Corner
     }
 
     /// <summary>
+    /// 自身のプロセスのウィンドウの角を処理する
+    /// </summary>
+    /// <returns>処理結果</returns>
+    const bool WindowCorner::ProcessSelfWindowCorners() noexcept
+    {
+        // ウィンドウの角を処理する(自身のプロセスIDをパラメーターとして渡す)
+        return EnumWindows(ProcessSelfWindowCornersCallback,
+            static_cast<LPARAM>(GetCurrentProcessId())) != 0;
+    }
+
+    /// <summary>
     /// トップレベルのウィンドウのハンドルを取得する
     /// </summary>
     /// <param name="windowHandle">ウィンドウのハンドル</param>
@@ -114,5 +125,38 @@ namespace HW::UnityEditorWindowCorner::Corner
             // 親ウィンドウを次の判定対象にする
             topLevelWindowHandle = parentWindow;
         }
+    }
+
+    /// <summary>
+    /// ProcessSelfWindowCornersの列挙処理のコールバック用関数
+    /// </summary>
+    /// <param name="windowHandle">ウィンドウハンドル</param>
+    /// <param name="parameter">パラメーター</param>
+    /// <returns>列挙を続行するか</returns>
+    BOOL CALLBACK WindowCorner::ProcessSelfWindowCornersCallback(HWND windowHandle, LPARAM parameter) noexcept
+    {
+        // ウィンドウのプロセスIDを取得する
+        DWORD windowProcessId;
+        if (!GetWindowThreadProcessId(windowHandle, &windowProcessId))
+        {
+            // ウィンドウのプロセスIDを取得できなかった場合は次のウィンドウの処理に進む
+            return TRUE;
+        }
+
+        // 自身のプロセスID(parameter経由で取得)とウィンドウのプロセスIDが異なる場合は次のウィンドウの処理に進む
+        if (static_cast<DWORD>(parameter) != windowProcessId) return TRUE;
+
+        WindowCornerType originalCornerType;
+        if (!Get(windowHandle, originalCornerType) || originalCornerType != WindowCornerType::Default)
+        {
+            // ウィンドウの角の種類がOSの既定値ではない場合は次のウィンドウの処理に進む
+            return TRUE;
+        }
+
+        // ウィンドウの角を丸めないように設定する
+        Set(windowHandle, WindowCornerType::DoNotRound, nullptr);
+
+        // 次のウィンドウの処理に進む
+        return TRUE;
     }
 }
