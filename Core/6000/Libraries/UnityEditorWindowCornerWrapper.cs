@@ -2,6 +2,10 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 UnityEditorWindowCorner.dllの関数を呼び出せるようにするラッパークラス
 
+UnityEditorWindowCornerWrapper.cs
+────────────────────────────────────────
+バージョン: 1.0.0
+2025 Wataame(HWataame)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 */
 using System.Runtime.InteropServices;
