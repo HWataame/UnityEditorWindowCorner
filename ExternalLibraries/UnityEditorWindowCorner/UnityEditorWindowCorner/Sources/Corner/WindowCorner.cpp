@@ -17,6 +17,39 @@ namespace HW::UnityEditorWindowCorner::Corner
     /// デフォルトコンストラクタ(外部生成防止用)
     /// </summary>
     WindowCorner::WindowCorner() noexcept {}
+
+    /// <summary>
+    /// ウィンドウの角の種類を取得する
+    /// </summary>
+    /// <param name="windowHandle">ウィンドウのハンドル</param>
+    /// <param name="type">ウィンドウの角の種類</param>
+    /// <returns>処理結果</returns>
+    const bool WindowCorner::Get(const HWND windowHandle, WindowCornerType& type) noexcept
+    {
+        // ウィンドウハンドルがNULLである場合は失敗
+        if (windowHandle == NULL) return false;
+
+        // トップレベルのウィンドウのハンドルを取得する
+        HWND topLevelWindowHandle = GetTopLevelWindowHandle(windowHandle);
+
+        DWM_WINDOW_CORNER_PREFERENCE cornerType = DWMWCP_DEFAULT;
+        auto result = DwmGetWindowAttribute(topLevelWindowHandle,
+            DWMWA_WINDOW_CORNER_PREFERENCE, &cornerType, sizeof(DWM_WINDOW_CORNER_PREFERENCE));
+
+        if (SUCCEEDED(result))
+        {
+            // ウィンドウの角の種類を取得できた場合
+            type = static_cast<WindowCornerType>(cornerType);
+            return true;
+        }
+        else
+        {
+            // ウィンドウの角の種類を取得できなかった場合は失敗
+            type = WindowCornerType::Default;
+            return false;
+        }
+    }
+
     /// <summary>
     /// ウィンドウの角の種類を設定する
     /// </summary>

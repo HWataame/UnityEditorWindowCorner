@@ -20,6 +20,14 @@ namespace HW::UnityEditorWindowCorner::Corner
     {
     public:
         /// <summary>
+        /// ウィンドウの角の種類を取得する
+        /// </summary>
+        /// <param name="windowHandle">ウィンドウのハンドル</param>
+        /// <param name="type">ウィンドウの角の種類</param>
+        /// <returns>処理結果</returns>
+        static const bool Get(const HWND windowHandle, WindowCornerType& type) noexcept;
+
+        /// <summary>
         /// ウィンドウの角の種類を設定する
         /// </summary>
         /// <param name="windowHandle">ウィンドウのハンドル</param>
