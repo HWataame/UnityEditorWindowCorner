@@ -36,7 +36,7 @@ namespace HW::UnityEditorWindowCorner
     {
         // ShowWindowを置き換える
         void* oldShowWindow;
-        if (!Injector::ReplaceFunction("Unity.dll", "USER32.dll", "ShowWindow",
+        if (!Injector::ReplaceFunction(targetModuleName, "USER32.dll", "ShowWindow",
             reinterpret_cast<void*>(CustomShowWindow), &oldShowWindow))
         {
             // ShowWindowを置き換えられなかった場合は失敗
