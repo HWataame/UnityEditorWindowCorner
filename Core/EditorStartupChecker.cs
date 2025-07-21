@@ -25,7 +25,7 @@ namespace HW.UnityEditorWindowCorner
         /// <summary>
         /// 既に処理されたか
         /// </summary>
-        public static bool IsAlreadyProcessed
+        internal static bool IsAlreadyProcessed
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => instance.isAlreadyProcessed;
@@ -37,7 +37,7 @@ namespace HW.UnityEditorWindowCorner
         /// </summary>
         /// <returns>処理を許可するか</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool TryFirstProcess()
+        internal static bool TryFirstProcess()
         {
             // インスタンスを取得する
             var instance = EditorStartupChecker.instance;
