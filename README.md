@@ -1,0 +1,2 @@
+# UnityEditorWindowCorner
+UnityEditorのウィンドウの角を丸めないようにするエディター拡張
