@@ -20,6 +20,12 @@ namespace HW::UnityEditorWindowCorner
     /// <returns>処理結果</returns>
     bool OnUnityEditorInitialize() noexcept
     {
+        if (!ShowWindowReplacer::ReplaceShowWindow())
+        {
+            // ShowWindowを独自の実装に置き換えられなかった場合は失敗
+            return false;
+        }
+
         // 自身のプロセスの既に存在するウィンドウの角を処理する
         WindowCorner::ProcessSelfWindowCorners();
 
