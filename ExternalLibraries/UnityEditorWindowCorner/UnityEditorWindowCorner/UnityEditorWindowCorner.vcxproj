@@ -139,13 +139,15 @@
       <ModuleDefinitionFile>Sources\AssemblyInfo\UnityEditorWindowCorner.def</ModuleDefinitionFile>
     </Link>
     <PreBuildEvent>
-      <Command>del "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>del "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+del "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>パッケージ部に存在するdllを削除する</Message>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
       <Message>パッケージ部にdllをコピーする</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -174,13 +176,15 @@
       <ModuleDefinitionFile>Sources\AssemblyInfo\UnityEditorWindowCorner.def</ModuleDefinitionFile>
     </Link>
     <PreBuildEvent>
-      <Command>del "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>del "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+del "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>パッケージ部に存在するdllを削除する</Message>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
       <Message>パッケージ部にdllをコピーする</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -206,13 +210,15 @@
       <ModuleDefinitionFile>Sources\AssemblyInfo\UnityEditorWindowCorner.def</ModuleDefinitionFile>
     </Link>
     <PreBuildEvent>
-      <Command>del "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>del "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+del "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>パッケージ部に存在するdllを削除する</Message>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
       <Message>パッケージ部にdllをコピーする</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -241,13 +247,15 @@
       <ModuleDefinitionFile>Sources\AssemblyInfo\UnityEditorWindowCorner.def</ModuleDefinitionFile>
     </Link>
     <PreBuildEvent>
-      <Command>del "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>del "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+del "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>パッケージ部に存在するdllを削除する</Message>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
+      <Command>copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\6000\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"
+copy "$(SolutionDir)$(PlatformTarget)\$(Configuration)\$(ProjectName)_$(PlatformTarget).dll" "$(SolutionDir)..\..\Core\202x\Libraries\$(PlatformTarget)\$(ProjectName)_$(PlatformTarget).dll"</Command>
       <Message>パッケージ部にdllをコピーする</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
