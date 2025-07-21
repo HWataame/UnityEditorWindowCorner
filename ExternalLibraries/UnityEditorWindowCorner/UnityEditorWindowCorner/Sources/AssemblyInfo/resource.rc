@@ -1,0 +1,40 @@
+/*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+リソースファイル
+
+resource.rc
+────────────────────────────────────────
+バージョン: 1.0.0
+2025 Wataame(HWataame)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*/
+#include	"resource.h"
+
+1 VERSIONINFO
+FILEOS          VERSION_FILE_OS
+FILETYPE        VERSION_FILE_TYPE
+FILEVERSION     VERSION_FILE_VERSION_ARRAY
+PRODUCTVERSION  VERSION_PRODUCT_VERSION_ARRAY
+
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName",      VERSION_COMPANY_NAME
+            VALUE "LegalCopyright",   VERSION_LEGAL_COPYRIGHT
+            VALUE "InternalName",     VERSION_INTERNAL_NAME
+            VALUE "OriginalFileName", VERSION_ORIGINAL_FILE_NAME
+            VALUE "ProductName",      VERSION_PRODUCT_NAME
+            VALUE "ProductVersion",   VERSION_PRODUCT_VERSION
+            VALUE "FileVersion",      VERSION_FILE_VERSION
+            VALUE "Comments",         VERSION_COMMENT
+            VALUE "FileDescription",  VERSION_FILE_DESCRIPTION
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", VERSION_LANGUAGE, VERSION_CHARSET
+    END
+END
