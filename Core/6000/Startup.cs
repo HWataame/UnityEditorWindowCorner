@@ -44,12 +44,6 @@ namespace HW.UnityEditorWindowCorner
                 string targetModuleName = null;
                 switch (versionMajor)
                 {
-                    case 2021:
-                    case 2022:
-                        // 2021.x / 2022.xの場合(ShowWindowの参照はUnity.exe自身がしている)
-                        targetModuleName = "Unity.exe";
-                        isActive = true;
-                        break;
                     case 6000:
                         // 6000.xの場合(ShowWindowの参照はUnity.dllに分離されている)
                         targetModuleName = "Unity.dll";
