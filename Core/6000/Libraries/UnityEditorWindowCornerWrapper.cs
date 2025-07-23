@@ -4,10 +4,11 @@ UnityEditorWindowCorner.dllの関数を呼び出せるようにするラッパ�
 
 UnityEditorWindowCornerWrapper.cs
 ────────────────────────────────────────
-バージョン: 1.0.0
+バージョン: 1.0.1
 2025 Wataame(HWataame)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 */
+#if UNITY_EDITOR_WIN
 using System.Runtime.InteropServices;
 
 namespace HW.UnityEditorWindowCorner.Libraries
@@ -28,3 +29,4 @@ namespace HW.UnityEditorWindowCorner.Libraries
             [MarshalAs(UnmanagedType.LPStr)] string targetModuleName);
     }
 }
+#endif
