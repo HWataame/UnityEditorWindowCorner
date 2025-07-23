@@ -4,10 +4,11 @@
 
 Startup.cs
 ────────────────────────────────────────
-バージョン: 1.0.0
+バージョン: 1.0.1
 2025 Wataame(HWataame)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 */
+#if UNITY_EDITOR_WIN
 using HW.UnityEditorWindowCorner.Libraries;
 using System;
 using System.Runtime.CompilerServices;
@@ -85,3 +86,4 @@ namespace HW.UnityEditorWindowCorner
         }
     }
 }
+#endif
