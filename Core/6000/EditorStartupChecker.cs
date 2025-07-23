@@ -4,7 +4,7 @@ UnityEditorWindowCornerの初回処理判定用のクラス
 
 EditorStartupChecker.cs
 ────────────────────────────────────────
-バージョン: 1.0.0
+バージョン: 1.0.1
 2025 Wataame(HWataame)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 */
