@@ -8,6 +8,7 @@ Startup.cs
 2025 Wataame(HWataame)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 */
+#if UNITY_EDITOR_WIN
 using HW.UnityEditorWindowCorner.Libraries;
 using System;
 using System.Runtime.CompilerServices;
@@ -85,3 +86,4 @@ namespace HW.UnityEditorWindowCorner
         }
     }
 }
+#endif

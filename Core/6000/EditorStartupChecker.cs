@@ -8,6 +8,7 @@ EditorStartupChecker.cs
 2025 Wataame(HWataame)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 */
+#if UNITY_EDITOR_WIN
 using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
@@ -58,3 +59,4 @@ namespace HW.UnityEditorWindowCorner
         }
     }
 }
+#endif
